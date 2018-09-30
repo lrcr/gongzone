@@ -768,6 +768,7 @@ var MapPage = /** @class */ (function () {
     };
     MapPage.prototype.revealAngry = function () {
         var _this = this;
+        this.presentToast("간접흡연 발생 지역으로 저장됩니다.");
         this.closeMyEmotionButton();
         this.getMyLocation().then(function (my_location) {
             return _this.http.addWarningPlace({
@@ -2249,7 +2250,7 @@ var IntroPage = /** @class */ (function () {
         console.log('ionViewDidLoad IntroPage');
         this.slides = [{
                 title: "",
-                description: "점점 늘어가는 금연구역 떄문에 <b>'필 터'</b> 를 찾고 계신가요? 지금 <b>공존</b>에서 <b>흡연구역</b>과 <b>금연구역</b>에 대한 정보를 확인하세요.",
+                description: "점점 늘어가는 금연구역 때문에 <b>'필 터'</b> 를 찾고 계신가요? 지금 <b>공존</b>에서 <b>흡연구역</b>과 <b>금연구역</b>에 대한 정보를 확인하세요.",
                 image: "./assets/imgs/smoke.png",
             },
             {
