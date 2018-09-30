@@ -612,6 +612,7 @@ var MapPage = /** @class */ (function () {
     };
     MapPage.prototype.presentAddModal = function () {
         this.presentToast("장소 추가 하기");
+        this.searchMap();
         // let alert = this.AlertCtrl.create();
         // alert.setTitle('장소 추가');
         // alert.addInput({
