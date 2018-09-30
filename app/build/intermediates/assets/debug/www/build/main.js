@@ -252,7 +252,7 @@ var MapPage = /** @class */ (function () {
     MapPage.prototype.addChatListener = function () {
         var _this = this;
         this.http.FirebaseDB.database.ref("/chat").on("child_added", function (v) {
-            var nickname;
+            var nickname = v.child("nickname").val();
             var distance;
             var uid = v.child("uid").val();
             var date = v.child("date").val();
@@ -3254,7 +3254,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
     ], MyApp.prototype, "content", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/sobyeong-yun/Desktop/workspace/gongzone/app/src/app/app.html"*/'<ion-menu side="right" [content]="content">\n    <ion-header>\n        <ion-toolbar>\n            <ion-title>\n                    <img src="./assets/svgs/map-marker.svg" style="width:20px; height:20px;">\n                <!-- <ion-icon name="ios-pin"></ion-icon>  -->\n                {{latitude}}\n            </ion-title>\n        </ion-toolbar>\n    </ion-header>\n\n    <ion-content>\n        <ion-slides [hidden]="chat?.length != 0 ">\n            <ion-slide>\n                <p style="color:#9d9d9d;">대화가 없습니다.</p>\n            </ion-slide>\n        </ion-slides>\n\n        <ion-list [hidden]="chat?.length == 0 ">\n            <ion-item *ngFor="let c of chat">\n                <h2>{{c.nickname}}</h2>\n                <p>{{c.content}}</p>\n\n                <p item-end>{{c.date}}i<br><i>{{c.distance}} </i></p>\n            </ion-item>\n        </ion-list>\n    </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>'/*ion-inline-end:"/Users/sobyeong-yun/Desktop/workspace/gongzone/app/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/sobyeong-yun/Desktop/workspace/gongzone/app/src/app/app.html"*/'<ion-menu side="right" [content]="content">\n    <ion-header>\n        <ion-toolbar>\n            <ion-title>\n                    <img src="./assets/svgs/map-marker.svg" style="width:20px; height:20px;">\n                <!-- <ion-icon name="ios-pin"></ion-icon>  -->\n                {{latitude}}\n            </ion-title>\n        </ion-toolbar>\n    </ion-header>\n\n    <ion-content>\n        <ion-slides [hidden]="chat?.length != 0 ">\n            <ion-slide>\n                <p style="color:#9d9d9d;">대화가 없습니다.</p>\n            </ion-slide>\n        </ion-slides>\n\n        <ion-list [hidden]="chat?.length == 0 ">\n            <ion-item *ngFor="let c of chat">\n                <h2>{{c.nickname}}</h2>\n                <p>{{c.content}}</p>\n\n                <p item-end>{{c.date}}<br><i>{{c.distance}} </i></p>\n            </ion-item>\n        </ion-list>\n    </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>'/*ion-inline-end:"/Users/sobyeong-yun/Desktop/workspace/gongzone/app/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
